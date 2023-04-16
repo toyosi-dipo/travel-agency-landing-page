@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+
+/* Hamburger Menu */
+.hamburger {
+  @apply relative cursor-pointer w-6 h-6 duration-[250ms];
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  @apply absolute w-6 h-0.5 top-0 left-0 bg-primary duration-500;
+}
+
+.hamburger-middle {
+  @apply translate-y-[7px];
+}
+
+.hamburger-bottom {
+  @apply translate-y-[14px];
+}
+
+.open.hamburger {
+  @apply fixed right-6 top-12;
+}
+
+.open .hamburger-top {
+  @apply rotate-45 translate-y-[6px]  translate-x-[6px];
+}
+
+.open .hamburger-bottom {
+  @apply -rotate-45 translate-y-[6px]  translate-x-[6px];
+}
+
+.open .hamburger-middle {
+  @apply hidden;
+}
+
+.open.menu-bar {
+  @apply h-[calc(100vh-7rem)] fixed;
+}
+
+@tailwind utilities;
